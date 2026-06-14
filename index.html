@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Environmental Education Platform</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(to right,#4CAF50,#2E7D32);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            background:white;
+            width:90%;
+            max-width:700px;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            color:#2E7D32;
+            margin-bottom:15px;
+        }
+
+        p{
+            color:#555;
+            margin-bottom:20px;
+            line-height:1.6;
+        }
+
+        .quote{
+            background:#E8F5E9;
+            padding:15px;
+            border-left:5px solid green;
+            margin-bottom:25px;
+            border-radius:8px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            background:#4CAF50;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            margin-top:15px;
+        }
+
+        button:hover{
+            background:#2E7D32;
+        }
+
+        .features{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+            gap:15px;
+            margin-top:30px;
+        }
+
+        .feature-box{
+            background:#F1F8E9;
+            padding:15px;
+            border-radius:10px;
+        }
+
+        .footer{
+            margin-top:25px;
+            color:#666;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌱 Gamified Environmental Education Platform</h1>
+
+    <p>
+        Learn about environmental protection through
+        interactive lessons, quizzes, badges, and rewards.
+    </p>
+
+    <div class="quote">
+        <strong>Environmental Quote:</strong><br>
+        "The Earth is what we all have in common."
+    </div>
+
+    <input type="text"
+           id="studentName"
+           placeholder="Enter Your Name">
+
+    <input type="text"
+           id="rollNumber"
+           placeholder="Enter Roll Number">
+
+    <button onclick="startLearning()">
+        Start Learning
+    </button>
+
+    <div class="features">
+
+        <div class="feature-box">
+            📚<br>
+            Learning Modules
+        </div>
+
+        <div class="feature-box">
+            📝<br>
+            Environmental Quiz
+        </div>
+
+        <div class="feature-box">
+            🏆<br>
+            Badges & Rewards
+        </div>
+
+        <div class="feature-box">
+            📊<br>
+            Leaderboard
+        </div>
+
+    </div>
+
+    <div class="footer">
+        First Year Engineering Mini Project
+    </div>
+
+</div>
+
+<script>
+
+function startLearning()
+{
+    let name =
+    document.getElementById("studentName").value;
+
+    let roll =
+    document.getElementById("rollNumber").value;
+
+    if(name==="" || roll==="")
+    {
+        alert("Please enter Name and Roll Number");
+        return;
+    }
+
+    localStorage.setItem("studentName",name);
+    localStorage.setItem("rollNumber",roll);
+
+    window.location.href="learn.html";
+}
+
+</script>
+
+</body>
+</html>
