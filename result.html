@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Result</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎉 Quiz Result</h1>
+
+    <div class="card">
+
+        <h2 id="studentName">
+            Student Name
+        </h2>
+
+        <h3 id="score">
+            Score: 0/100
+        </h3>
+
+        <h3 id="percentage">
+            Percentage: 0%
+        </h3>
+
+        <h3 id="badge">
+            Badge: Eco Beginner
+        </h3>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🏅 Performance Status</h2>
+
+        <p id="performance">
+            Keep Learning and Protect the Environment!
+        </p>
+
+    </div>
+
+    <button onclick="leaderboard()">
+        🏆 View Leaderboard
+    </button>
+
+    <br><br>
+
+    <a href="index.html">
+        <button>
+            🔄 Take Quiz Again
+        </button>
+    </a>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+
+showResult();
+
+function showResult()
+{
+    let name = localStorage.getItem("studentName") || "Student";
+
+    let score = parseInt(
+        localStorage.getItem("score") || 0
+    );
+
+    let percentage = score;
+
+    let badge = "Eco Beginner";
+    let performance = "Keep Learning and Protect the Environment!";
+
+    if(score >= 90)
+    {
+        badge = "🏆 Environmental Hero";
+        performance = "Excellent! You are an Environmental Champion.";
+    }
+    else if(score >= 70)
+    {
+        badge = "🥇 Eco Warrior";
+        performance = "Great Job! Your environmental knowledge is impressive.";
+    }
+    else if(score >= 50)
+    {
+        badge = "🥈 Green Learner";
+        performance = "Good Work! Continue learning more about sustainability.";
+    }
+
+    document.getElementById("studentName").innerHTML =
+        "👨‍🎓 Student: " + name;
+
+    document.getElementById("score").innerHTML =
+        "📊 Score: " + score + "/100";
+
+    document.getElementById("percentage").innerHTML =
+        "📈 Percentage: " + percentage + "%";
+
+    document.getElementById("badge").innerHTML =
+        "🎖 Badge: " + badge;
+
+    document.getElementById("performance").innerHTML =
+        performance;
+}
+
+</script>
+
+</body>
+</html>
