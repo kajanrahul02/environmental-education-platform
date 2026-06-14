@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Gamified Environmental Education Platform</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:linear-gradient(135deg,#4CAF50,#81C784);
+        }
+
+        .container{
+            width:380px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            color:#2E7D32;
+            margin-bottom:10px;
+        }
+
+        p{
+            color:gray;
+            margin-bottom:25px;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            border:none;
+            background:#2E7D32;
+            color:white;
+            font-size:18px;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1B5E20;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌍 Welcome</h1>
+    <p>Gamified Environmental Education Platform</p>
+
+    <form id="loginForm">
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter Student Name"
+            required>
+
+        <input
+            type="text"
+            id="regNo"
+            placeholder="Enter Register Number"
+            required>
+
+        <button type="submit">
+            Start Learning
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let studentName = document.getElementById("studentName").value;
+    let regNo = document.getElementById("regNo").value;
+
+    // Store details in localStorage
+    localStorage.setItem("studentName", studentName);
+    localStorage.setItem("regNo", regNo);
+
+    // Redirect to quiz page
+    window.location.href = "quiz.html";
+
+});
+
+</script>
+
+</body>
+</html>
